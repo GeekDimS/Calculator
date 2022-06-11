@@ -30,7 +30,7 @@ def operation(a1, b1, a2, b2, op):
         result = result.real
     # print(result.imag == 0, result.real)
     error_or_result_text = f'{number1} {op} {number2} = '
-    return (error, error_or_result_text, result)
+    return (error, error_or_result_text, str(result))
 
 
 # print(operation(6, -2, -3, 4, '+'))

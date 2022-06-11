@@ -9,7 +9,8 @@ def data_input(): # Функция для ввода данных
     return first_number, second_number, operation
 
 def data_output(result): # Функция для вывода данных
-    print(f'{result[0][0]} + i {result[0][1]} {operation}  {result[1][0]} +i{result[1][1]}')
+    print(result[1] + result[2])
+    #print(f'{result[0][0]} + i {result[0][1]} {operation}  {result[1][0]} +i{result[1][1]}')
 
 def exit_or_not():
     lag = input("Если хотите продолжить - введите 1, если выйти - 0 и нажмите Enter")
