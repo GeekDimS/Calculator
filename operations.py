@@ -20,24 +20,17 @@ def operation(a1, b1, a2, b2, op):
     number2_type = check_number_type(b2)
 
     error = False
+    error_or_result_text =""
     result = 0
+    number1 = complex(a1, b1) if number1_type == COMPLEX_TYPE else a1
+    number2 = complex(a2, b2) if number2_type == COMPLEX_TYPE else a2
 
-    if number1_type == number2_type == COMPLEX_TYPE:
-        number1 = complex(a1, b1)
-        number2 = complex(a2, b2)
-        print(number1, number2)
-        result = calculation_operation(number1, number2, op)
-        # print(number1, number2, result)
-    elif  number1_type == number2_type == REAL_TYPE:
-        number1 = a1
-        number2 = a2
-        result = calculation_operation(number1, number2, op)
-        # print(number1, number2, result)
-    else:
-        error = True
+    result = calculation_operation(number1, number2, op)
+    if result.imag == 0:
+        result = result.real
+    # print(result.imag == 0, result.real)
+    error_or_result_text = f'{number1} {op} {number2} = '
+    return (error, error_or_result_text, result)
 
 
-    return (error, result)
-
-
-# print(operation(6, 4, -3, -2, '*'))
+# print(operation(6, -2, -3, 4, '+'))
